@@ -1,65 +1,84 @@
-﻿
+﻿namespace MethodsExercise2;
 
-using System.ComponentModel.Design;
-
-namespace MethodsExercise
+class Program
 {
-    public class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            //Create a story that prompts the user for different add ins throughout.
-            //I would like to get a really good grasp on handling basic method creation.
-
-            Console.WriteLine("What kind of story will I create and how will I use these methods?");
-            string name = GetName();
-            string animal = GetAnimalType();
-            int amount = AskHowMany();
-            string treat = TreatType();
-            int bags = HowManyBagsOfTreats();
-            Console.WriteLine($"Hello {name}... I like {animal} too!\n You should give {amount} of them a home! That is a lot of food and treats!\nI think they really love {treat}, {bags} bags is a perfect amount to start with.\nAre there any other animals on your List?");
-            string animal2 = GetAnimalType();
-            double number = HowMuch();
-            Console.WriteLine($"{animal2} are super fun too! Thanks a {number}% for participating in such a random questionnaire!");
-            Console.WriteLine("Is this too many methods? I want to do my best to keep this clean?");
-        }
-        //Create a method to get a name that can be called and interpolated in the story.
-        public static string GetName()
-        {
-            Console.WriteLine("Hello, Player! What's a good name for you?");
-            return Console.ReadLine();
-        }
-        
-        public static string GetAnimalType()
-        {
-            Console.WriteLine("What is your favorite animal?");
-            return Console.ReadLine();
-        }
-        //Create a method to get a number (int)
-        public static int AskHowMany()
-        {
-            Console.WriteLine("How many of this animal will you adopt?");
-            return int.Parse(Console.ReadLine());
-        }
-
-        public static string TreatType()
-        {
-            Console.WriteLine("What is your favorite treat?");
-            return Console.ReadLine();
-        }
-
-        public static int HowManyBagsOfTreats()
-        {
-           Console.WriteLine("How many bags of treats?");
-           return int.Parse(Console.ReadLine());
-           
-        }
-        //Choose a method to reuse before the final question.
-        public static double HowMuch()
-        {
-            Console.WriteLine("Final Question: Pick a number between 50 and 150!");
-            return double.Parse(Console.ReadLine());
-        }
+        Console.WriteLine("What I am going to create with this fun little story?");
+        SillyQuestionnaire();
+        Console.WriteLine("Let's Move on to some Math! Woo Hoo!");
+        Console.WriteLine(Add(4, 4));
+        Console.WriteLine(Subtract(4, 4));
+        Console.WriteLine(Divide(4, 4));
+        Console.WriteLine(Multiply(4, 4));
+        Console.WriteLine("Ok that was fun... but just Practice, Let's Math for real now.");
+        Console.WriteLine(AddTwoNumbers());
+        Console.WriteLine(MultiplyTwoNumbers());
+        Console.WriteLine("Thanks for playing along, I will still be using this to work more on params and more fun!\nThis is just the beginning!");
         
     }
+
+    public static void SillyQuestionnaire()
+    {
+        Console.WriteLine("Hello Player, What is a good name for you?");
+        string name = Console.ReadLine();
+        Console.WriteLine("Let's hear your favorite animal?(plural)");
+        string animal = Console.ReadLine();
+        Console.WriteLine("Adoption is important... So how many friends will you adopt?");
+        int friends = int.Parse(Console.ReadLine());
+        Console.WriteLine("That is a lot of new friends, which means a lot of treats! What kind will you feed them?");
+        string kind = Console.ReadLine();
+        Console.WriteLine("That sounds great... and of course don't forget their favorite food!\nWhat food will it be?");
+        string food = Console.ReadLine();
+        Console.Clear();
+        Console.WriteLine($"Hi {name}, thanks for dropping by today, we are so happy to have you adopt {friends} {animal}.\n Surely they will love their new home, it will be filled with so much love, fun, {kind}, and {food}! Oh and don't forget the fresh water!\nAgain thanks for choosing adoption and let us know if there are any questions!");
+
+    }
+
+    public static int Add(int num1, int num2)
+    {
+        return num1 + num2;
+    }
+
+    public static int Subtract(int num1, int num2)
+    {
+        return num1 - num2;
+    }
+
+    public static int Divide(int num1, int num2)
+    {
+        return num1 / num2;
+    }
+
+    public static int Multiply(int num1, int num2)
+    {
+        return num1 * num2;
+    }
+    
+    public static int AddTwoNumbers()
+    {
+        Console.WriteLine("Hello I will need two different numbers!");
+        Console.WriteLine("First Number Please:");
+        int firstNumber = int.Parse(Console.ReadLine());
+        Console.WriteLine("Thanks\nSecond Number Please:");
+        int secondNumber = int.Parse(Console.ReadLine());
+        int result = firstNumber + secondNumber;
+        return result;
+    }
+
+    public static int MultiplyTwoNumbers()
+    {
+        Console.WriteLine("Hi just a bit more practice... I will need two different numbers again!");
+        Console.WriteLine("First Number Please:");
+        int firstNumber = int.Parse(Console.ReadLine());
+        Console.WriteLine("Second Number Please:");
+        int secondNumber = int.Parse(Console.ReadLine());
+        int result = firstNumber * secondNumber;
+        return result;
+    }
+    //TryParse
+    
+    
+    
+
 }
